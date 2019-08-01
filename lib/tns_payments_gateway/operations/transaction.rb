@@ -52,4 +52,14 @@ module TNSPaymentsGateway
   class RetrieveTransaction < TransactionOperation
     include GetOperation
   end
+
+  class ThreeDSInitiateAuthentication < TransactionOperation
+    include PutOperation
+
+    def options
+      {
+        apiOperation: "INITIATE_AUTHENTICATION"
+      }
+    end
+  end
 end
