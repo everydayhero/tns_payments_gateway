@@ -1,0 +1,63 @@
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
+InstalledFiles
+_yardoc
+coverage/
+doc/
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# gems
+/vendor/bundle
+/vendor
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+/.env
+
+/.rvmrc
+/.rbenv-version
+
+# MacOS Pollution
+.DS_Store
+
+/public/assets
+/public/system
+/public/static
+/spec/examples.txt
+
+# Component files
+/components/*/.bundle/
+/components/*/log/*.log
+/components/*/pkg/
+/components/*/spec/dummy/.sass-cache
+/components/*/spec/dummy/db/*.sqlite3
+/components/*/spec/dummy/db/*.sqlite3-journal
+/components/*/spec/dummy/log/*.log
+/components/*/spec/dummy/tmp/
+
+REVISION
+
+# node files
+node_modules
+npm-debug.log
+
+# Yarn files
+yarn-error.log

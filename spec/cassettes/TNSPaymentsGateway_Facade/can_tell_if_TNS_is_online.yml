@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/information"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:26 GMT
+      Cache-Control:
+      - public
+      Expires:
+      - Fri, 09 Feb 2018 05:22:36 GMT
+      Last-Modified:
+      - Fri, 09 Feb 2018 05:22:16 GMT
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '52'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de24f99f5071f683c66a2717c095c0d829863552475e5c68145a395ca75f65fd4f5c93c548056e5a61178f27a0c19aeee21;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"gatewayVersion":"18.1.1-13R","status":"OPERATING"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:26 GMT
+recorded_with: VCR 4.0.0

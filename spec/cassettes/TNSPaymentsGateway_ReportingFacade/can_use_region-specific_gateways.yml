@@ -1,0 +1,196 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/history/version/1/merchant/<TNS_REPORTING_URL:MERCHANT_ID>/transaction?columnHeaders=time,order%20id,transaction%20id,transaction%20type,result&columns=timeOfRecord,order.id,transaction.id,transaction.type,result&timeOfRecord.end=2016-09-09T00:00:00Z&timeOfRecord.start=2016-09-08T00:00:00Z"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuZGVmYXVsdDpmYmM3ZjQyNjI2N2Y1ZDM4Y2MwNDQ1MzI5N2VmZWIxNQ==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - attachment; filename="transactions.csv"
+      Vary:
+      - Accept-Encoding, User-Agent
+      Content-Type:
+      - text/csv;charset=ISO-8859-1
+      Date:
+      - Fri, 09 Feb 2018 05:22:35 GMT
+      Set-Cookie:
+      - HHPersistence=162524737;Path=/, TS01f8f5b8=01fb8d8de20fa74495b195925def7d5aa43738bd2385796409da55e6aa35d41ce5bb70602e12e13c7dcb65d1a5674ea57fbfdd066adb8eacfc1483d5550fdc98b671a1a442;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        "time","order id","transaction id","transaction type","result"
+        "2016-09-08T18:58:14Z","1284114-3496","1284114-3496","PAYMENT","SUCCESS"
+        "2016-09-08T19:07:21Z","1284115-443","1284115-443","PAYMENT","SUCCESS"
+        "2016-09-08T19:13:31Z","1284116-814","1284116-814","PAYMENT","SUCCESS"
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:35 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/history/version/1/merchant/<TNS_PAY_URL:MERCHANT_ID>/transaction?columnHeaders=time,order%20id,transaction%20id,transaction%20type,result&columns=timeOfRecord,order.id,transaction.id,transaction.type,result&timeOfRecord.end=2016-09-09T00:00:00Z&timeOfRecord.start=2016-09-08T00:00:00Z"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuZGVmYXVsdDoyNjQ3YjYzZTlmYTg5NWIzODUyMmJkYTc1NjQ0ZDYzNQ==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - attachment; filename="transactions.csv"
+      Vary:
+      - Accept-Encoding, User-Agent
+      Content-Type:
+      - text/csv;charset=ISO-8859-1
+      Date:
+      - Fri, 09 Feb 2018 05:22:35 GMT
+      Set-Cookie:
+      - HHPersistence=452254804;Path=/, TS01f8f5b8=01fb8d8de26bf9a82d8a20ec0cfae414582fc8c7416059253ba13d27e6d5d4ceb3620c96fc0528a7511b95d4f09f1646407c06161f3160bcd9205bf20a8570e474ec693395;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        "time","order id","transaction id","transaction type","result"
+        "2016-09-08T00:58:09Z","240001096990","1096990","PAYMENT","FAILURE"
+        "2016-09-08T01:37:41Z","KG598c27dd-95cc-5441-8d21-74a617ae0e43","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T01:49:27Z","KG583ad783-cb3e-5153-9653-d816b2c7210f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T01:51:26Z","KG80c2678c-9c55-59f7-8753-fe72dceb4aba","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T01:52:02Z","KGa126d271-ff15-5954-9cf8-0067058bb9c9","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T01:56:33Z","KGf55e900f-a4b4-511b-997f-74c649b28607","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:09:18Z","KGf100457f-8229-573c-a5dc-62c15fd1204b","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:18:37Z","KGc4474f1a-5ce4-50b6-8c50-5993dc8953f4","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:19:05Z","KG8e800b52-7298-51ad-8e7d-bc508bd8b1c1","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:33:59Z","KG3f4730f2-0286-5fc4-a468-1846e69b28b8","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:35:14Z","KG08a69a93-2e43-5369-a11a-e5b9c2bb23f1","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:39:54Z","KG7e4fe84f-ab45-546b-9f68-d6088ccf7c3e","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:41:11Z","KG09b40773-a1db-51d5-957c-d31c43596758","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:44:29Z","KGa1f62aff-1e46-509c-8e08-4276dd8b5ce1","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:45:40Z","KG39ada444-31e9-553d-8c9b-e1ec67c8c3ff","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:45:48Z","KGf995f960-9de1-50ca-9303-83c02725b15a","PAY","PAYMENT","FAILURE"
+        "2016-09-08T02:45:59Z","KG475bc5db-72dc-53d5-a65f-836d9631b59a","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:46:06Z","KG5687bf46-fbca-52c7-aeeb-ed60a3b44a24","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T02:46:10Z","KGdf010e95-1dde-59d0-895a-1902c6d58a15","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:20:11Z","KGe53eb156-db77-5766-80cd-c25eb0863753","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:21:26Z","KGdad9fa71-1df3-51a2-8c4e-1bf2c4431c1b","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:21:33Z","KGbafd1da0-02f9-579d-8171-85f15be665b2","PAY","PAYMENT","FAILURE"
+        "2016-09-08T03:21:44Z","KG3f7adcb9-9bf7-50bd-856e-27541a3b00df","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:21:52Z","KGaaa7e0d1-2c83-567b-a880-7aa991ab8e63","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:21:56Z","KGa8ef417d-9f2b-501f-9b9a-49f4c0dd9914","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:22:22Z","KGa5340e35-cb73-5037-b562-1fec2d698aba","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:23:30Z","KG0032627e-8465-5ddc-aed8-ad4a8daed3f0","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:23:38Z","KGb3a91af6-6f25-5008-a022-e067c4b58d2f","PAY","PAYMENT","FAILURE"
+        "2016-09-08T03:23:49Z","KGaa798d3d-9b03-5e37-9762-7ecd37254b6a","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:23:56Z","KG0db446d3-6de8-56a1-aef1-1a9efd90704f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:24:01Z","KG5a0a00a0-c014-5c0c-9a2f-fca67511a426","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:42:24Z","KG83b23220-e643-5815-982b-5448e7f42fa5","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:43:30Z","KG2e0934b4-44a9-598b-899d-e1f5629f8752","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:43:37Z","KG15870274-8a44-5117-bac5-fe3e3430f5e8","PAY","PAYMENT","FAILURE"
+        "2016-09-08T03:43:49Z","KGbcd3809a-a353-5c10-bd07-610487a2158f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:43:56Z","KG7ca2e54c-3a7c-5166-aeec-3ec44893786f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:44:00Z","KG37657792-c72f-505e-bcdc-a13ea98830e1","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:48:03Z","KG062ceabd-feee-5bc0-99be-315d3ab50143","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:49:10Z","KGa2f36e5b-8801-5ee1-be6c-59d7986ca89b","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:49:17Z","KGf77ed606-3efd-5e13-ac6f-8e625e5d680d","PAY","PAYMENT","FAILURE"
+        "2016-09-08T03:49:28Z","KGcfaa57f9-a910-575f-bb57-e9d772a13e69","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:49:34Z","KGec9e5815-5211-5ed8-a0bc-aeab287cf713","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:49:38Z","KG2e2b3ca2-e946-5383-999d-d392211cd0f0","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:55:26Z","KG3ff69dff-ce54-59dd-8bd9-d98d5eb44510","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:56:08Z","KGf7c9f07a-0671-521d-9144-a9a8e20e06a1","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:56:15Z","KGf01065df-e701-5f89-a506-afc20574b36f","PAY","PAYMENT","FAILURE"
+        "2016-09-08T03:56:26Z","KG99cb70c6-44d8-52f5-aef9-e779a345a81f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:56:33Z","KG606fa544-5232-55be-a4b1-51a212d39a54","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T03:56:37Z","KG8e37f6a5-62dd-5185-8d8c-477a92c3b9d8","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:10:23Z","KGbc208814-d27d-5dae-a823-4092accac035","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:10:30Z","KG4c8f684e-664d-5bf1-a6a1-3ff07c541026","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:15:04Z","KGec17aa51-87c6-5e2f-9b74-82416c30691b","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:20:04Z","KGfbf64220-7472-5d61-8f16-64565544dc12","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:21:16Z","KG2e70b2af-5ed4-5c84-849e-5f4b0f896e73","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:21:23Z","KG99455aa9-59ff-5044-8392-93c350a77aaf","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:21:35Z","KG6289c69b-4f48-5744-8995-13a2c0be37f7","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:21:42Z","KG867fa5fc-9725-53cc-81e0-cf01fe1309c9","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:21:46Z","KGba7ed011-3256-5a23-8254-1d419d849d14","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:29:12Z","KG09e6371b-b778-5b8f-bf7f-ae758d74b30f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:29:54Z","KGd8f6402e-e162-560f-9a4e-bb3f044400d3","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:30:02Z","KG3d61debd-2cbc-5347-b61d-d5da19fbfb07","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:30:13Z","KG18b4bc2f-9e7d-571e-a829-2aa150dc0484","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:30:20Z","KG39a24426-86b0-55fd-abc3-2aa2816800b0","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:30:25Z","KGe2745468-acc8-5065-85a0-48f5064e1171","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:32:06Z","KGb8abae06-b8cf-5da8-8dd1-cdd072a17603","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:33:14Z","KG0ae7dcd7-892a-5a3b-b8ca-cff18129410e","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:33:22Z","KG38f5eb0c-7c81-59c1-8e26-569238622ae0","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:33:33Z","KG4a1be38b-6831-5c24-9eab-02114f2c009a","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:33:40Z","KGac1d0dbe-4bdf-56ac-8f8b-ec2fef8dd65e","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:33:44Z","KG4c8079c2-d898-5f19-9fe4-6885180c486c","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:38:11Z","KG434ce66a-1e5d-5126-beb7-b75f6b76cd8b","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:39:26Z","KGd834e7e3-79b7-56a7-a6eb-b104eef80e5b","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:39:33Z","KG7788373f-ca64-5847-9154-474632f97761","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:39:45Z","KG834e9773-8edc-531f-8306-1a213ee8d7fd","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:39:52Z","KGe990f452-ec81-5a4a-9ab5-ff6c464a3cae","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:39:56Z","KGbe10cf50-d6d6-5ef0-b7f9-bc76b42d3504","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:55:05Z","KGf16bf2aa-6a5c-5fde-bb19-dc266ca8cfc0","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:56:09Z","KG3a0b5cc5-3d01-5dcc-83c6-6bb0820ae96f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:56:16Z","KG0ff079b6-d1bb-53ff-aabd-786fcdfcfecb","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:56:27Z","KG21250d39-1ce8-5a1c-991e-c340c20e4e55","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:56:33Z","KG3f3e1b85-4161-57bf-9bc0-b8cbcbc610b8","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:56:38Z","KG54775f05-8357-55cb-81af-812f8760eb24","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:57:13Z","KGb51c1694-6afc-5425-a418-650c129c1fbf","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:58:24Z","KGca56368a-4ca6-563f-a7cb-7305a5e593bc","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:58:32Z","KG658fce8f-a43b-5885-b42a-47d8fff17f05","PAY","PAYMENT","FAILURE"
+        "2016-09-08T04:58:43Z","KG518e68af-b8a0-52ba-a7aa-ea75c6e8ba52","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:58:50Z","KGbaaf7618-8f35-5114-9d4c-3a92c97067d2","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T04:58:54Z","KG5419ad7c-0f45-502f-a1b3-52cf797aa3df","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:11:02Z","KG6aa0d4af-0047-51b9-8672-3d72f9d0765e","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:12:16Z","KG05d2d5a2-f525-5afd-8132-a7386da04ed7","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:12:23Z","KG11d53c05-d99e-5678-928f-315a89ee4c62","PAY","PAYMENT","FAILURE"
+        "2016-09-08T05:12:34Z","KGbdc00b8a-0315-5dc8-9b20-c278c0244a74","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:12:41Z","KG75aeb7a6-8d82-5926-9125-617579c7b6fd","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:12:46Z","KG8e436c58-374d-5963-8acc-bb29582d04ed","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:29:02Z","KG45931d3b-e00b-52fb-8abb-77d67ae3be46","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:30:15Z","KG0a5ed0b4-db62-5120-9153-222d8e18687e","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:30:23Z","KG76b17ea2-0e8d-5083-b64b-377269ba0a2a","PAY","PAYMENT","FAILURE"
+        "2016-09-08T05:30:34Z","KG5f090fdc-84bf-54a4-8aa1-6df624444f47","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:30:41Z","KG5a3e906e-4a82-5e6e-bbc5-cf9863185e11","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T05:30:45Z","KG927830ed-1416-5ded-baf7-ab168033f259","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T06:02:20Z","KG60f0da6f-7ac4-5b7a-a9db-fc084b6df90f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T06:48:02Z","KG65e55751-5858-55d9-9dfb-d7e30650440f","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T06:49:14Z","KG101f9f17-980e-5a0d-879e-2a301d65ebcf","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T06:49:21Z","KG78659b56-5081-5ff7-833f-aa96f94fca8e","PAY","PAYMENT","FAILURE"
+        "2016-09-08T06:49:32Z","KG4565ffb3-3786-5618-bc6a-ee0af2ba8f58","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T06:49:39Z","KG8cf977ec-3fb1-5ff1-8904-9b932351ca6c","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T06:49:43Z","KG1d4d0614-2475-5f05-8196-3be00e1978ad","PAY","PAYMENT","SUCCESS"
+        "2016-09-08T22:24:45Z","240001096991","1096991","PAYMENT","SUCCESS"
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:35 GMT
+recorded_with: VCR 4.0.0

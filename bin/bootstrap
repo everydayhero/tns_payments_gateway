@@ -1,0 +1,7 @@
+#!/bin/bash
+
+project="$(ruby -e "puts File.basename File.expand_path('$0/../../')")"
+
+. $(dirname $0)/../../../bin/rails_bootstrap.sh
+
+bootstrap_rails_engine "$project"

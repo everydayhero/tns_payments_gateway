@@ -1,0 +1,319 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:31 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '150'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de278d9a8708e76243cdb74d5ecafb2ba9d244c138e37e4f95820e9b9896a8934aa59643039d94a42ad8b2b5e445e9ebe1a;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","session":{"id":"SESSION0002992182654L49696191I5","updateStatus":"NO_UPDATE","version":"8a28563f01"}}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:31 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002992182654L49696191I5"
+    body:
+      encoding: UTF-8
+      string: '{"sourceOfFunds":{"provided":{"card":{"number":"4005550000000019","expiry":{"month":"5","year":"21"},"securityCode":"123"}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:31 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '324'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2ff7bccd9901c66cada2f277438ec7ace0b3547a4e769467848dfb08b566da393c170fb51edf98989606c61a62e4ea180;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","session":{"id":"SESSION0002992182654L49696191I5","updateStatus":"SUCCESS","version":"5afeda6802"},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","number":"400555xxxxxx0019","scheme":"VISA","securityCode":"xxx"}}},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:31 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/56c4c09bc9b8c268af3210e9aa903278d2890f47/transaction/PAY"
+    body:
+      encoding: UTF-8
+      string: '{"apiOperation":"PAY","sourceOfFunds":{"type":"CARD"},"session":{"id":"SESSION0002992182654L49696191I5"},"order":{"amount":"100.00","currency":"AUD"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:31 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '1408'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2be81a415d91f042d1ecf96515a185745301b1d12753198c9d223f8bcf3fb016548d2d7eea309387e5b380fce6b07829f;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"CAPTURED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":0.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.444Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":100.00,"authorizationCode":"055269","currency":"AUD","frequency":"SINGLE","id":"PAY","receipt":"180209055269","source":"INTERNET","terminal":"08845778","type":"PAYMENT"},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:31 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/56c4c09bc9b8c268af3210e9aa903278d2890f47"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:31 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '2398'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de25fbb95df3324b7def4e29a2ad93d27df6fb34403d6c943023606ffca1e92f8c3e39b5aa7c09fb91d79fb6f0846383b41;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"status":"CAPTURED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":0.00,"transaction":[{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"CAPTURED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":0.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.444Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":100.00,"authorizationCode":"055269","currency":"AUD","frequency":"SINGLE","id":"PAY","receipt":"180209055269","source":"INTERNET","terminal":"08845778","type":"PAYMENT"},"version":"46"}]}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:31 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/56c4c09bc9b8c268af3210e9aa903278d2890f47/transaction/REFUND"
+    body:
+      encoding: UTF-8
+      string: '{"apiOperation":"REFUND","transaction":{"amount":"50.00","currency":"AUD"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:31 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '1420'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2106d898f5c1e755efdddffdfe74d2a84b08f795038f2b6428ec366cf5f709c1ccb4d121ef4b7d3cd0cc05eb8ee60a0a2;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"PARTIALLY_REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":50.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.808Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":50.00,"authorizationCode":"055270","currency":"AUD","frequency":"SINGLE","id":"REFUND","receipt":"180209055270","source":"INTERNET","terminal":"08845778","type":"REFUND"},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:31 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/56c4c09bc9b8c268af3210e9aa903278d2890f47"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:31 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '3841'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2aa61a29dbd5c2e1a70242bbe3c344e84913f7351d698d860bd3c6709063c23c3cae94f3929e5dd238ed87b9370c894db;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"status":"PARTIALLY_REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":50.00,"transaction":[{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"PARTIALLY_REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":50.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.444Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":100.00,"authorizationCode":"055269","currency":"AUD","frequency":"SINGLE","id":"PAY","receipt":"180209055269","source":"INTERNET","terminal":"08845778","type":"PAYMENT"},"version":"46"},{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"PARTIALLY_REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":50.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.808Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":50.00,"authorizationCode":"055270","currency":"AUD","frequency":"SINGLE","id":"REFUND","receipt":"180209055270","source":"INTERNET","terminal":"08845778","type":"REFUND"},"version":"46"}]}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:31 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/56c4c09bc9b8c268af3210e9aa903278d2890f47/transaction/REFUND2"
+    body:
+      encoding: UTF-8
+      string: '{"apiOperation":"REFUND","transaction":{"amount":"50.00","currency":"AUD"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:32 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '1412'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2ba6e26d754db3dbc2dcfa7caf816557cf6da4c007d7913685e679477b3f3675099fcb8395f72b730fbc1e1bb1a5b4075;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":100.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:32.160Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":50.00,"authorizationCode":"055271","currency":"AUD","frequency":"SINGLE","id":"REFUND2","receipt":"180209055271","source":"INTERNET","terminal":"08845778","type":"REFUND"},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:32 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/56c4c09bc9b8c268af3210e9aa903278d2890f47"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:32 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '5227'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2d4a2bbf82c03b0e75e493a2c1db172568d911d258d9014ca3e18719505e9be9dee95cf6f93ef24ba9ebcb2419c6f922f;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"status":"REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":100.00,"transaction":[{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":100.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.444Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":100.00,"authorizationCode":"055269","currency":"AUD","frequency":"SINGLE","id":"PAY","receipt":"180209055269","source":"INTERNET","terminal":"08845778","type":"PAYMENT"},"version":"46"},{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":100.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:31.808Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":50.00,"authorizationCode":"055270","currency":"AUD","frequency":"SINGLE","id":"REFUND","receipt":"180209055270","source":"INTERNET","terminal":"08845778","type":"REFUND"},"version":"46"},{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"<TNS_PAY_URL:MERCHANT_ID>","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:31.444Z","currency":"AUD","id":"56c4c09bc9b8c268af3210e9aa903278d2890f47","status":"REFUNDED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":100.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"timeOfRecord":"2018-02-09T05:22:32.160Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998208845778"},"amount":50.00,"authorizationCode":"055271","currency":"AUD","frequency":"SINGLE","id":"REFUND2","receipt":"180209055271","source":"INTERNET","terminal":"08845778","type":"REFUND"},"version":"46"}]}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:32 GMT
+recorded_with: VCR 4.0.0

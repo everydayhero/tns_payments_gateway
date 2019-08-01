@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. $(dirname $0)/../../../bin/rails_bootstrap.sh
+
+payments_gem_ci

@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:35 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '150'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de26cfdcdc901bf823bb9a120f1493fa3b35fe950f88b7962c3c705c17746f37a9daa7395903422a3960e9f81ff5b9f9aaf;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","session":{"id":"SESSION0002563659619H59866815H2","updateStatus":"NO_UPDATE","version":"25ffffb901"}}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:35 GMT
+recorded_with: VCR 4.0.0

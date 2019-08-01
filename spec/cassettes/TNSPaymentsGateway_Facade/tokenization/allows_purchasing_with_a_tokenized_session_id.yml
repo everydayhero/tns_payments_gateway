@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/session"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAyOmU3NTBmMjVhY2QyMDdkMTY4MTE3ZDEwNTBlNmZiYWY3
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:34 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '150'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2c2d7306c61ecc9452aeea9e5165c1aaf031502b19304074304301c66c5da42c0ced5571e71ceacbb38785b51ca675101;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"TESTEVHEROSTG02","result":"SUCCESS","session":{"id":"SESSION0002192538644F09327974E2","updateStatus":"NO_UPDATE","version":"506bb1d401"}}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/session/SESSION0002192538644F09327974E2"
+    body:
+      encoding: UTF-8
+      string: '{"sourceOfFunds":{"provided":{"card":{"number":"4005550000000019","expiry":{"month":"5","year":"21"},"securityCode":"123"}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAyOmU3NTBmMjVhY2QyMDdkMTY4MTE3ZDEwNTBlNmZiYWY3
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:34 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '324'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2eca2f6cde73967245b22985a29d096e909cceb9744f164f449ccee5e4be4de37ba8fd44b8fdebfb56a35dc146aebee65;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"TESTEVHEROSTG02","session":{"id":"SESSION0002192538644F09327974E2","updateStatus":"SUCCESS","version":"a0b1990a02"},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","number":"400555xxxxxx0019","scheme":"VISA","securityCode":"xxx"}}},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
+- request:
+    method: post
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/token"
+    body:
+      encoding: UTF-8
+      string: '{"session":{"id":"SESSION0002192538644F09327974E2"},"sourceOfFunds":{"type":"CARD"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAyOmU3NTBmMjVhY2QyMDdkMTY4MTE3ZDEwNTBlNmZiYWY3
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:34 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '496'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2f9605db9c64f264d8e5264b03e3c9adb373226ff25502eaffdb5ce7bba6d3f53482b76b63d7865072e34a752ccd1218f;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"repositoryId":"TESTSUELDO","response":{"gatewayCode":"BASIC_VERIFICATION_SUCCESSFUL"},"result":"SUCCESS","sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":"0521","fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"type":"CARD"},"status":"VALID","token":"9254920346736377","usage":{"lastUpdated":"2018-02-09T05:22:34.414Z","lastUpdatedBy":"TESTEVHEROSTG02","lastUsed":"2018-02-09T05:22:34.414Z"},"verificationStrategy":"BASIC"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/order/c931fe120ccfe7357e676f2c439187e6ff91ffac/transaction/PAY"
+    body:
+      encoding: UTF-8
+      string: '{"apiOperation":"PAY","sourceOfFunds":{"type":"CARD","token":"9254920346736377"},"order":{"amount":"100.00","currency":"AUD"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAyOmU3NTBmMjVhY2QyMDdkMTY4MTE3ZDEwNTBlNmZiYWY3
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:34 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '1431'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de234037e8b6113f6f47fd29ba81742dd045d9bd2027072968bb414655ce5a110c7f33cc3dd7504ce1c94462a7e646688e4;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"gatewayEntryPoint":"WEB_SERVICES_API","merchant":"TESTEVHEROSTG02","order":{"amount":100.00,"chargeback":{"amount":0,"currency":"AUD"},"creationTime":"2018-02-09T05:22:34.589Z","currency":"AUD","id":"c931fe120ccfe7357e676f2c439187e6ff91ffac","status":"CAPTURED","totalAuthorizedAmount":100.00,"totalCapturedAmount":100.00,"totalRefundedAmount":0.00},"response":{"acquirerCode":"00","gatewayCode":"APPROVED"},"result":"SUCCESS","risk":{"response":{"gatewayCode":"ACCEPTED","review":{"decision":"NOT_REQUIRED"},"rule":[{"data":"400555","name":"MERCHANT_BIN_RANGE","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"SUSPECT_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"name":"TRUSTED_CARD_LIST","recommendation":"NO_ACTION","type":"MERCHANT_RULE"},{"data":"400555","name":"MSO_BIN_RANGE","recommendation":"NO_ACTION","type":"MSO_RULE"}]}},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","issuer":"JPMORGAN
+        CHASE BANK, N.A.","number":"400555xxxxxx0019","scheme":"VISA"}},"token":"9254920346736377","type":"CARD"},"timeOfRecord":"2018-02-09T05:22:34.589Z","transaction":{"acquirer":{"batch":20180209,"id":"STGEORGE","merchantId":"057998204360525"},"amount":100.00,"authorizationCode":"008835","currency":"AUD","frequency":"SINGLE","id":"PAY","receipt":"180209008835","source":"MOTO","terminal":"04360525","type":"PAYMENT"},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
+recorded_with: VCR 4.0.0

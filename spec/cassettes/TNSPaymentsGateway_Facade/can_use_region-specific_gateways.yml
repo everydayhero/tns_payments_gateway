@@ -1,0 +1,313 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:26 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '150'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2f0f8d6c5a949b06af96788194f633dd12c983adc73255f56ca7aa9b30b14d3127841035810e27449b50303d8badb096c;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","session":{"id":"SESSION0002860582099L70573174J9","updateStatus":"NO_UPDATE","version":"90a6750301"}}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:26 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002860582099L70573174J9"
+    body:
+      encoding: UTF-8
+      string: '{"sourceOfFunds":{"provided":{"card":{"number":"4005550000000019","expiry":{"month":"5","year":"21"},"securityCode":"123"}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '324'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de28e81b1d95194699bad6dab568052916939c6686ddd4d3414e748e0136f3409e64153d0e56ac4fc801b633bb8a5ce9a72;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","session":{"id":"SESSION0002860582099L70573174J9","updateStatus":"SUCCESS","version":"c88c8dda02"},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","number":"400555xxxxxx0019","scheme":"VISA","securityCode":"xxx"}}},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+- request:
+    method: post
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<UK_TNS_PAY_URL:MERCHANT_ID>/session"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWRURBWUhTQkMwMTphMTM1NTQ0YTNjMzBmMGY4YzY0OTYzYTliYzJiNzllMQ==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '151'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de28add5cb561ccf3356081c34f78eb409fa469efca5929a8455cfc7741df9d7e88e019c555a742f8c0781964b1d9541f63;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<UK_TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","session":{"id":"SESSION0002414854531I60196562L8","updateStatus":"NO_UPDATE","version":"3cbbabbe01"}}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+- request:
+    method: put
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<UK_TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002414854531I60196562L8"
+    body:
+      encoding: UTF-8
+      string: '{"sourceOfFunds":{"provided":{"card":{"number":"4005550000000019","expiry":{"month":"5","year":"21"},"securityCode":"123"}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWRURBWUhTQkMwMTphMTM1NTQ0YTNjMzBmMGY4YzY0OTYzYTliYzJiNzllMQ==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '325'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de291e4a063902128e6622424ac7326f8264873ae34bd080d0dc2d31429a220b62c510ae4c57e3c1bab49f9aa89db9ab996;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<UK_TNS_PAY_URL:MERCHANT_ID>","session":{"id":"SESSION0002414854531I60196562L8","updateStatus":"SUCCESS","version":"194415da02"},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","number":"400555xxxxxx0019","scheme":"VISA","securityCode":"xxx"}}},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002860582099L70573174J9"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '324'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2f7542e870f05698f48df5c7e654bb8f38aeb94beea65e500892491577fd5580577a7412598b9b3848494c2d25779f6d0;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","session":{"id":"SESSION0002860582099L70573174J9","updateStatus":"SUCCESS","version":"c88c8dda02"},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","number":"400555xxxxxx0019","scheme":"VISA","securityCode":"xxx"}}},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<UK_TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002414854531I60196562L8"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWRURBWUhTQkMwMTphMTM1NTQ0YTNjMzBmMGY4YzY0OTYzYTliYzJiNzllMQ==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '325'
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de2bf1232cd9828da2c6cad972d26b77223457cebb05d3263b0c2a757282ae38665b7d5b0c95d4e2f158b177d8912dc212a;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"merchant":"<UK_TNS_PAY_URL:MERCHANT_ID>","session":{"id":"SESSION0002414854531I60196562L8","updateStatus":"SUCCESS","version":"194415da02"},"sourceOfFunds":{"provided":{"card":{"brand":"VISA","expiry":{"month":"5","year":"21"},"fundingMethod":"CREDIT","number":"400555xxxxxx0019","scheme":"VISA","securityCode":"xxx"}}},"version":"46"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002414854531I60196562L8"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '105'
+      X-Cnection:
+      - close
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de283717ea05db5e0e98e3e94742de2b18b7cd24dd5363a36b741af0068405da59482b9c01573e40e7c23b2f09115c52b73;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"cause":"INVALID_REQUEST","explanation":"Form Session not
+        found or expired."},"result":"ERROR"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+- request:
+    method: get
+    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<UK_TNS_PAY_URL:MERCHANT_ID>/session/SESSION0002860582099L70573174J9"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic bWVyY2hhbnQuVEVTVEVWRURBWUhTQkMwMTphMTM1NTQ0YTNjMzBmMGY4YzY0OTYzYTliYzJiNzllMQ==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 05:22:27 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '105'
+      X-Cnection:
+      - close
+      Set-Cookie:
+      - TS01f8f5b8=01fb8d8de236f27c52d738d0b697da2f074f7102b3d3189602a1a6b5c63df5cd39731b5dec41dbef2a9c8f5211a8e8f7736bf6a471;
+        Path=/; HTTPOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"cause":"INVALID_REQUEST","explanation":"Form Session not
+        found or expired."},"result":"ERROR"}'
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 05:22:27 GMT
+recorded_with: VCR 4.0.0
