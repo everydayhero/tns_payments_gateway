@@ -1,5 +1,5 @@
 require "dry-struct"
-require "delta_force/deep_compact"
+require "tns_payments_gateway/deep_compact"
 
 module TNSPaymentsGateway
   module Types
@@ -15,7 +15,7 @@ module TNSPaymentsGateway
     InvalidHash = ::Class.new(StandardError)
 
     module_function def cast_hash(struct_class, hash)
-      DeltaForce::DeepCompact.call(struct_class.new(hash).to_hash)
+      TNSPaymentsGateway::DeepCompact.call(struct_class.new(hash).to_hash)
     rescue Dry::Struct::Error
       raise InvalidHash
     end

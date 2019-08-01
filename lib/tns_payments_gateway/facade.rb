@@ -1,6 +1,6 @@
 require "delegate"
 require "hashie/mash"
-require "delta_force/deep_compact"
+require "tns_payments_gateway/deep_compact"
 
 require "tns_payments_gateway/types"
 
@@ -69,7 +69,7 @@ module TNSPaymentsGateway
         session: {
           id: session_id,
         },
-        order: DeltaForce::DeepCompact.call(
+        order: TNSPaymentsGateway::DeepCompact.call(
           amount: amount,
           currency: currency,
           statementDescriptor: cast(
@@ -96,7 +96,7 @@ module TNSPaymentsGateway
           type: "CARD",
           token: token,
         },
-        order: DeltaForce::DeepCompact.call(
+        order: TNSPaymentsGateway::DeepCompact.call(
           amount: amount,
           currency: currency,
           statementDescriptor: cast(
@@ -173,7 +173,7 @@ module TNSPaymentsGateway
 
     def perform(operation, options = {})
       result operation.new(@gateway).call(
-        DeltaForce::DeepCompact.call(options) || {},
+        TNSPaymentsGateway::DeepCompact.call(options) || {},
       )
     end
 

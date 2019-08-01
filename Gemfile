@@ -2,7 +2,4 @@ source "http://rubygems.org"
 
 gemspec
 
-path "../" do
-  gem "delta_force"
-  gem "excon_encoding_helper"
-end
+gem "excon_encoding_helper", github: "everydayhero/excon_encoding_helper", tag: "v1.0.0"

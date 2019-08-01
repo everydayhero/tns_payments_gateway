@@ -1,22 +1,16 @@
-PATH
-  remote: ..
+GIT
+  remote: git://github.com/everydayhero/excon_encoding_helper.git
+  revision: 004033fa895630e69a1b9dd846a036ff867d2489
+  tag: v1.0.0
   specs:
-    delta_force (0.0.1unbuilt)
-      activesupport (~> 5.1.0)
-      octagon
-    excon_encoding_helper (0.0.1unbuilt)
+    excon_encoding_helper (1.0.0)
       content-type
-    octagon (0.0.1unbuilt)
-      activesupport (~> 5.1.0)
-      anima
-      countries
-      money
 
 PATH
   remote: .
   specs:
     tns_payments_gateway (0.0.1unbuilt)
-      delta_force
+      activesupport (~> 5.1.0)
       dry-struct (~> 0.7.0)
       excon (~> 0.40)
       excon_encoding_helper
@@ -27,28 +21,16 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    abstract_type (0.0.7)
     activesupport (5.1.7)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    adamantium (0.2.0)
-      ice_nine (~> 0.11.0)
-      memoizable (~> 0.4.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    anima (0.3.1)
-      abstract_type (~> 0.0.7)
-      adamantium (~> 0.2)
-      equalizer (~> 0.0.11)
     concurrent-ruby (1.1.5)
     content-type (0.0.1)
       parslet (~> 1.5)
-    countries (3.0.0)
-      i18n_data (~> 0.8.0)
-      sixarm_ruby_unaccent (~> 1.1)
-      unicode_utils (~> 1.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
@@ -56,7 +38,7 @@ GEM
     dry-configurable (0.8.3)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
-    dry-container (0.7.1)
+    dry-container (0.7.2)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
     dry-core (0.4.8)
@@ -79,21 +61,15 @@ GEM
       dry-equalizer (~> 0.2, >= 0.2.2)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 0.5, >= 0.5)
-    equalizer (0.0.11)
-    excon (0.64.0)
+    excon (0.65.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     hashdiff (0.4.0)
     hashie (3.5.7)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    i18n_data (0.8.0)
     ice_nine (0.11.2)
-    memoizable (0.4.2)
-      thread_safe (~> 0.3, >= 0.3.1)
     minitest (5.11.3)
-    money (6.13.4)
-      i18n (>= 0.6.4, <= 2)
     multipart-post (2.1.1)
     parslet (1.8.2)
     public_suffix (3.1.1)
@@ -112,11 +88,9 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
     safe_yaml (1.0.5)
-    sixarm_ruby_unaccent (1.2.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    unicode_utils (1.4.0)
     uri_config (0.0.12)
     vcr (5.0.0)
     webmock (3.6.0)
@@ -129,7 +103,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.6)
-  delta_force!
   dotenv
   excon_encoding_helper!
   rake

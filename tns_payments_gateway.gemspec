@@ -23,10 +23,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", ">= 1.19"
   spec.add_development_dependency "dotenv"
 
+  spec.add_dependency "activesupport", "~> 5.1.0"
   spec.add_dependency "faraday"
   spec.add_dependency "excon", "~> 0.40"
   spec.add_dependency "hashie", "~> 3.5.7"
-  spec.add_dependency "delta_force"
   spec.add_dependency "dry-struct", "~> 0.7.0"
   spec.add_dependency "uri_config", "~> 0.0.4"
   spec.add_dependency "excon_encoding_helper"
