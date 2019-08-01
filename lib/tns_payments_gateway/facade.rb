@@ -161,6 +161,26 @@ module TNSPaymentsGateway
       )
     end
 
+    def three_d_s_initiate_auth(order_id, transaction_id, currency, session_id,
+                                purpose: "PAYMENT_TRANSACTION")
+      perform(
+        ThreeDSInitiateAuthentication,
+        orderId: order_id,
+        transactionId: transaction_id,
+        authentication: {
+          acceptVersions: "3DS2",
+          channel: "PAYER_BROWSER",
+          purpose: purpose,
+        },
+        order: {
+          currency: currency,
+        },
+        session: {
+          id: session_id,
+        }
+      )
+    end
+
     private
 
     def cast(klass, hash)

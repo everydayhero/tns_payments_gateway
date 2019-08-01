@@ -15,13 +15,13 @@ module TNSPaymentsGateway
       expect(subject.merchant_id).to eq "TESTEVHEROSTG03"
     end
 
-    context "payments" do
-      let(:session_id) { TNSPaymentsGateway::TestSupport::CardSession.sample }
-      let(:order_id) { Digest::SHA1.hexdigest(session_id) }
-      let(:amount) { "100.00" }
-      let(:currency) { "AUD" }
-      let(:half_amount) { "50.00" }
+    let(:session_id) { TNSPaymentsGateway::TestSupport::CardSession.sample }
+    let(:order_id) { Digest::SHA1.hexdigest(session_id) }
+    let(:amount) { "100.00" }
+    let(:currency) { "AUD" }
+    let(:half_amount) { "50.00" }
 
+    context "payments" do
       let!(:result) do
         subject.pay(order_id, amount, currency, session_id)
       end
@@ -140,6 +140,15 @@ module TNSPaymentsGateway
         .to eq "TESTEVEDAYHSBC01"
       expect(region1.retrieve_session(session2).result).to eq "ERROR"
       expect(region2.retrieve_session(session1).result).to eq "ERROR"
+    end
+
+    it "can initiate three-d-s auth" do
+      pre_auth = subject.three_d_s_initiate_auth(order_id, order_id, currency,
+                                                 session_id)
+
+      expect(pre_auth.response.gatewayRecommendation)
+        .to eq "PROCEED_WITH_AUTHENTICATION"
+      expect(pre_auth.authentication.redirectHtml).not_to be_nil
     end
 
     context "tokenization" do
