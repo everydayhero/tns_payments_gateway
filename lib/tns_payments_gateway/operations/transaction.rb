@@ -58,7 +58,17 @@ module TNSPaymentsGateway
 
     def options
       {
-        apiOperation: "INITIATE_AUTHENTICATION"
+        apiOperation: "INITIATE_AUTHENTICATION",
+      }
+    end
+  end
+
+  class ThreeDSAuthenticatePayer < TransactionOperation
+    include PutOperation
+
+    def options
+      {
+        apiOperation: "AUTHENTICATE_PAYER",
       }
     end
   end

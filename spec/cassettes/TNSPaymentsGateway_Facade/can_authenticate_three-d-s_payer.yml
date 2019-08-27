@@ -1,0 +1,79 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/session"
+      body:
+        encoding: UTF-8
+        string: "{}"
+      headers:
+        User-Agent:
+          - Faraday v0.14.0
+        Authorization:
+          - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 201
+        message: Created
+      headers:
+        Date:
+          - Fri, 09 Feb 2018 05:22:33 GMT
+        Pragma:
+          - no-cache
+        Cache-Control:
+          - no-cache, no-store, must-revalidate
+        Expires:
+          - '0'
+        Content-Type:
+          - application/json;charset=ISO-8859-1
+        Content-Length:
+          - '150'
+        Set-Cookie:
+          - TS01f8f5b8=01fb8d8de290868acbb150d67b6ee3ee0fc4576e3bf0d28a176aac120320c30b757af217cf289a55f311d276b4b68b72cdd26f350e;
+            Path=/; HTTPOnly
+      body:
+        encoding: ASCII-8BIT
+        string: '{"merchant":"<TNS_PAY_URL:MERCHANT_ID>","result":"SUCCESS","session":{"id":"SESSION0002103529465L96502023E0","updateStatus":"NO_UPDATE","version":"c2dd486501"}}'
+      http_version:
+    recorded_at: Fri, 09 Feb 2018 05:22:33 GMT
+  - request:
+      method: put
+      uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/<TNS_PAY_URL:MERCHANT_ID>/order/adda4f0045f823e3fc220bd90a1d461165f5c871/transaction/adda4f0045f823e3fc220bd90a1d461165f5c871"
+      body:
+        encoding: UTF-8
+        string: '{"authentication": {"redirectResponseUrl": "<host>/merchantSimulator/jsp/simple/output.jsp"}, "correlationId": "test", "device": {"browser": "MOZILLA", "browserDetails": {"3DSecureChallengeWindowSize": "FULL_SCREEN", "acceptHeaders": "application/json", "colorDepth": 24, "javaEnabled": true, "language": "en-US", "screenHeight": 640, "screenWidth": 480, "timeZone": 273 }, "ipAddress": "127.0.0.1"}, "order": {"amount": "100", "currency": "AUD"}, "session": {"id": "SESSION0002103529465L96502023E0"}, "apiOperation": "AUTHENTICATE_PAYER"}'
+      headers:
+        User-Agent:
+          - Faraday v0.14.0
+        Authorization:
+          - Basic bWVyY2hhbnQuVEVTVEVWSEVST1NURzAzOjMzMjk2YjA2ZGUwMzQ4Yjg5MTQ5ZmE2YjhlMjQwMjY0
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 201
+        message: Created
+      headers:
+        Date:
+          - Fri, 09 Feb 2018 05:22:33 GMT
+        Pragma:
+          - no-cache
+        Cache-Control:
+          - no-cache, no-store, must-revalidate
+        Expires:
+          - '0'
+        Content-Type:
+          - application/json;charset=ISO-8859-1
+        Content-Length:
+          - '1218'
+        Set-Cookie:
+          - TS01f8f5b8=01fb8d8de2b9ff1fd34e38edec40957fa52d525f8814694fa096d6d4c0879661fefca9d107c6ec897bde22dbf31d8ae8c5b703e8d6;
+            Path=/; HTTPOnly
+      body:
+        encoding: ASCII-8BIT
+        string: '{"authentication": {"3ds2": {"transactionStatus": "C"}, "redirect": {"customized": {"3DS": {"acsUrl": "<host>/acs/mastercard/v2/prompt", "cReq": "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6ImEwZmYwY2FiLTU3YWUtNGEyMS1hNTQ5LTZiMTg4NmZjNzFkMiJ9"} }, "redirectHtml": "<div id=\"threedsChallengeRedirect\" xmlns=\"http://www.w3.org/1999/html\"> <form id =\"threedsChallengeRedirectForm\" method=\"POST\" action=\"<host>/acs/mastercard/v2/prompt\" target=\"challengeFrame\"> <input type=\"hidden\" name=\"creq\" value=\"eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6ImEwZmYwY2FiLTU3YWUtNGEyMS1hNTQ5LTZiMTg4NmZjNzFkMiJ9\" /> </form> <iframe id=\"challengeFrame\" name=\"challengeFrame\" width=\"100%\" height=\"100%\" ></iframe><script>document.getElementById(\"threedsChallengeRedirectForm\").submit();</script> </div>"} }, "correlationId": "test", "order": {"currency": "AUD", "id": "209de13f-e3f2-469d-9be4-e4b89b17ec36"}, "response": {"gatewayRecommendation": "PROCEED_WITH_AUTHENTICATION"}, "result": "SUCCESS", "sourceOfFunds": {"provided": {"card": {"expiry": {"month": "5", "year": "21"}, "number": "512345xxxxxx0008"} } }, "timeOfRecord": "2019-02-19T04:08:10.435Z", "transaction": {"id": "three", "type": "AUTHENTICATION"}, "version": "51"}'
+      http_version:
+    recorded_at: Fri, 09 Feb 2018 05:22:33 GMT
+recorded_with: VCR 4.0.0
