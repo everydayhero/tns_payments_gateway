@@ -151,6 +151,15 @@ module TNSPaymentsGateway
       expect(pre_auth.authentication.redirectHtml).not_to be_nil
     end
 
+    it "can authenticate three-d-s payer" do
+      response_redirect = "https://zuul.everydayhero.io/api/secure_auth/authenticated"
+      auth = subject.three_d_s_authenticate_payer(order_id, order_id, currency,
+        amount, session_id, response_redirect)
+      expect(auth.response.gatewayRecommendation)
+        .to eq "PROCEED_WITH_AUTHENTICATION"
+      expect(auth.authentication.redirectHtml).not_to be_nil
+    end
+
     context "tokenization" do
       let(:amount) { "100.00" }
       let(:currency) { "AUD" }
