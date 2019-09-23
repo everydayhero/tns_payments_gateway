@@ -189,7 +189,8 @@ module TNSPaymentsGateway
     end
 
     def three_d_s_authenticate_payer(order_id, transaction_id, currency, amount,
-                                     masked_pan, session_id, response_redirect)
+                                     masked_pan, expiry_month, expiry_year,
+                                     session_id, response_redirect)
       perform(
         ThreeDSAuthenticatePayer,
         orderId: order_id,
@@ -208,6 +209,10 @@ module TNSPaymentsGateway
           provided: {
             card: {
               number: masked_pan,
+              expiry: {
+                month: expiry_month,
+                year: expiry_year,
+              },
             },
           },
         },
