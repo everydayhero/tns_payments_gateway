@@ -162,7 +162,7 @@ module TNSPaymentsGateway
     end
 
     def three_d_s_initiate_auth(order_id, transaction_id, currency, session_id,
-                                purpose: "PAYMENT_TRANSACTION")
+                                masked_pan, purpose: "PAYMENT_TRANSACTION")
       perform(
         ThreeDSInitiateAuthentication,
         orderId: order_id,
@@ -178,11 +178,18 @@ module TNSPaymentsGateway
         session: {
           id: session_id,
         },
+        sourceOfFunds: {
+          provided: {
+            card: {
+              number: masked_pan,
+            },
+          },
+        },
       )
     end
 
     def three_d_s_authenticate_payer(order_id, transaction_id, currency, amount,
-                                     session_id, response_redirect)
+                                     masked_pan, session_id, response_redirect)
       perform(
         ThreeDSAuthenticatePayer,
         orderId: order_id,
@@ -196,6 +203,13 @@ module TNSPaymentsGateway
         },
         session: {
           id: session_id,
+        },
+        sourceOfFunds: {
+          provided: {
+            card: {
+              number: masked_pan,
+            },
+          },
         },
       )
     end
