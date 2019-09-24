@@ -168,7 +168,7 @@ module TNSPaymentsGateway
         orderId: order_id,
         transactionId: transaction_id,
         authentication: {
-          acceptVersions: "3DS2",
+          acceptVersions: "3DS1,3DS2",
           channel: "PAYER_BROWSER",
           purpose: purpose,
         },
