@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "tns_payments_gateway"
-  spec.version       = "1.2.3"
+  spec.version       = "1.2.4"
   spec.authors       = ["EDH Payments Team"]
   spec.email         = ["payments@everydayhero.com.au"]
   spec.summary       = "EDH TNS Payments Gem"
