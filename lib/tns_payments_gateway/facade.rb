@@ -182,7 +182,7 @@ module TNSPaymentsGateway
     end
 
     def three_d_s_authenticate_payer(order_id, transaction_id, currency, amount,
-                                     session_id, response_redirect)
+                                     session_id, response_redirect, device)
       perform(
         ThreeDSAuthenticatePayer,
         orderId: order_id,
@@ -197,6 +197,7 @@ module TNSPaymentsGateway
         session: {
           id: session_id,
         },
+        device: device,
       )
     end
 
