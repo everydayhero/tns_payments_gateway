@@ -5,7 +5,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-URL = "https://secure.ap.tnspayments.com/api/documentation/apiDocumentation/rest-json/version/latest/wadl.xml?locale=en_US"
+URL = "https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/wadl.xml?locale=en_US"
 
 doc = open(URL) { |f| Nokogiri::XML(f) }
 

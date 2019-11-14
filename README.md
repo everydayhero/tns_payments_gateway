@@ -1,9 +1,9 @@
 # TNSPaymentsGateway
 
-Wrapper around the TNS Payments REST API.
+Wrapper around the Mastercard Payment Gateway (formerly TNS Payments) REST API.
 
 ## Usage
 
-TNS API Documentation: https://secure.ap.tnspayments.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
+API Documentation: https://test-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
 
 See spec/facade_spec.rb
