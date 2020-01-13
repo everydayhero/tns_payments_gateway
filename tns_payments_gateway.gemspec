@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activesupport", "< 6"
   spec.add_dependency "faraday"
-  spec.add_dependency "excon", "~> 0.40"
+  spec.add_dependency "excon"
   spec.add_dependency "hashie", "~> 3.6.0"
   spec.add_dependency "dry-struct", "~> 1.0.0"
   spec.add_dependency "uri_config", "~> 0.0.4"
