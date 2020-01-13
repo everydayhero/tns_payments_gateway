@@ -24,7 +24,7 @@ end
 
 # rubocop:disable Metrics/LineLength
 def with_tokenizing_profile
-  with_env("AU_TNS_PAY_URL", "https://ap-gateway.mastercard.com") do
+  with_env("AU_TNS_PAY_URL", "https://TESTMERCHANT:testapikey@ap-gateway.mastercard.com") do
     yield
   end
 end
