@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/session"
+    uri: "https://ap-gateway.mastercard.com/api/rest/version/52/merchant/TESTMERCHANT/session"
     body:
       encoding: UTF-8
       string: "{}"
@@ -40,7 +40,7 @@ http_interactions:
   recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
 - request:
     method: put
-    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/session/SESSION0002192538644F09327974E2"
+    uri: "https://ap-gateway.mastercard.com/api/rest/version/52/merchant/TESTMERCHANT/session/SESSION0002192538644F09327974E2"
     body:
       encoding: UTF-8
       string: '{"sourceOfFunds":{"provided":{"card":{"number":"4005550000000019","expiry":{"month":"5","year":"21"},"securityCode":"123"}}}}'
@@ -78,7 +78,7 @@ http_interactions:
   recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
 - request:
     method: post
-    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/token"
+    uri: "https://ap-gateway.mastercard.com/api/rest/version/52/merchant/TESTMERCHANT/token"
     body:
       encoding: UTF-8
       string: '{"session":{"id":"SESSION0002192538644F09327974E2"},"sourceOfFunds":{"type":"CARD"}}'
@@ -117,7 +117,7 @@ http_interactions:
   recorded_at: Fri, 09 Feb 2018 05:22:34 GMT
 - request:
     method: put
-    uri: "<TNS_PAY_URL:HOST>/api/rest/version/52/merchant/TESTEVHEROSTG02/order/c931fe120ccfe7357e676f2c439187e6ff91ffac/transaction/PAY"
+    uri: "https://ap-gateway.mastercard.com/api/rest/version/52/merchant/TESTMERCHANT/order/c931fe120ccfe7357e676f2c439187e6ff91ffac/transaction/PAY"
     body:
       encoding: UTF-8
       string: '{"apiOperation":"PAY","sourceOfFunds":{"type":"CARD","token":"9254920346736377"},"order":{"amount":"100.00","currency":"AUD"}}'
