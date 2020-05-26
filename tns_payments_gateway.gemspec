@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", ">= 1.19"
   spec.add_development_dependency "dotenv"
 
-  spec.add_dependency "activesupport", "< 6"
+  spec.add_dependency "activesupport", "< 7"
   spec.add_dependency "faraday"
   spec.add_dependency "excon"
   spec.add_dependency "hashie", "~> 3.6.0"
